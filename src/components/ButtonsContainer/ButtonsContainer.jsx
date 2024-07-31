@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { NumberButton } from "../ui/NumberButton";
 import { OperatorButton } from "@/components/ui/OperatorButton";
 import { DelButton } from "@/components/ui/DelButton";

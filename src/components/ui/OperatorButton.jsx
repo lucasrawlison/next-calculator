@@ -38,9 +38,7 @@ const buttonVariants = cva(
 
 const OperatorButton = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : "button"
-  // React.useEffect(()=>{
-  //   console.log(props.props);
-  // },[])
+  
   return (
     (<Comp
     onClick={()=>{handleOperatorInput(props.operator,

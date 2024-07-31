@@ -38,9 +38,7 @@ const buttonVariants = cva(
 
 const DelButton = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : "button"
-  // React.useEffect(()=>{
-  //   console.log(props.props);
-  // },[])
+ 
   return (
     (<Comp
     onClick={()=>{handleDel(props.props.currentvalue, props.props.setCurrentValue)}}

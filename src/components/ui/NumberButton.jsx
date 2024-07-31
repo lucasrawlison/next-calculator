@@ -38,9 +38,7 @@ const buttonVariants = cva(
 
 const NumberButton = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : "button"
-  React.useEffect(()=>{
-    console.log(props.props);
-  },[])
+  
   return (
     (<Comp
     onClick={()=>{handleNumberImput(props.number, props.props.result, props.props.setResult, props.props.setCurrentValue, props.props.currentvalue)}}
