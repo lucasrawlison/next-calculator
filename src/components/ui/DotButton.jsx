@@ -2,7 +2,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva } from "class-variance-authority";
 
-import {handleNumberImput} from "@/utils/handleNumberImput/handleNumberImput"
+import {handleInsertDot} from "@/utils/handleInsertDot/handleInsertDot"
 
 import { cn } from "@/lib/utils"
 
@@ -36,18 +36,19 @@ const buttonVariants = cva(
   }
 )
 
-const Button = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
+const DotButton = React.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
   const Comp = asChild ? Slot : "button"
   React.useEffect(()=>{
     console.log(props.props);
   },[])
   return (
     (<Comp
+    onClick={()=>{handleInsertDot(props.props.currentValue, props.props.setCurrentValue, props.props.setResult) }}
       className={cn(buttonVariants({ variant, size, className }))}
       ref={ref}
       {...props} />)
   );
 })
-Button.displayName = "Button"
+DotButton.displayName = "Button"
 
-export { Button, buttonVariants }
+export { DotButton, buttonVariants }

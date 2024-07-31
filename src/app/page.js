@@ -8,6 +8,8 @@ import { useState } from "react";
 
 export default function Home() {
   const [currentValue, setCurrentValue] = useState(0)
+  const [previousNumber, setPreviousNumber] = useState(null)
+  const [operator, setOperator] = useState(null)
   const [result, setResult] = useState(false)
 
   return (
@@ -17,8 +19,12 @@ export default function Home() {
         <ButtonsContainer
         currentvalue={currentValue}
         result={result}
+        previousnumber={previousNumber}
+        setPreviousNumber={setPreviousNumber}
         setCurrentValue={setCurrentValue}
         setResult={setResult}
+        operator={operator}
+        setOperator={setOperator}
         />
       </div>
     </div>
